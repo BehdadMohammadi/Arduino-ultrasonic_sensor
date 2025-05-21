@@ -22,13 +22,16 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(trig, LOW);
   duration = pulseIn(echo, HIGH);
+
+  Serial.print("Echo: ");
+  Serial.println(duration);
   
   if(duration>=38000){
     Serial.print("Out range");
   }
   else
   {
-    distance = duration/58;
+    distance = (duration*0.0343)/2;
     Serial.print(distance);
     Serial.print("cm");
     meter=distance/100;
@@ -37,6 +40,6 @@ void loop() {
     Serial.println("m");
  }
  
- delay(1000)
+ delay(1000);
 
 }

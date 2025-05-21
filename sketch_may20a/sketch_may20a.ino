@@ -25,31 +25,8 @@ void loop() {
   digitalWrite(trig, HIGH);
   delayMicroseconds(10);
   digitalWrite(trig, LOW);
-
   
-
-  
-//  duration = pulseIn(echo, HIGH);
-//
-//  Serial.print("Echo: ");
-//  Serial.println(duration);
-//  
-//  if(duration>=38000){
-//    Serial.print("Out range");
-//  }
-//  else
-//  {
-//    distance = (duration*0.0343)/2;
-//    Serial.print(distance);
-//    Serial.print("cm");
-//    meter = distance/100;
-//    Serial.print("\t");
-//    Serial.print(meter);
-//    Serial.println("m");
-// }
-// 
- Serial.println(duration);
- delay(1000);
+  delay(3000);
 
 }
 
@@ -66,6 +43,10 @@ void measure()
     time_end = micros();
 
     duration = time_end - time_start;
- 
+    
+    distance = ((float)duration*343*0.001)/2;
+    
+    Serial.println(distance);
+   
   }
 }

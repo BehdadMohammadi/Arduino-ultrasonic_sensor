@@ -11,9 +11,8 @@ void setup() {
   digitalWrite(trig, LOW);
   delayMicroseconds(2);
   pinMode(echo, INPUT);
+  attachInterrupt(digitalPinToInterrupt(echo), measure, CHANGE);
   delay(6000);
-  Serial.println("Distance:");
-
 }
 
 void loop() {
@@ -42,4 +41,9 @@ void loop() {
  
  delay(1000);
 
+}
+
+void measure()
+{
+  
 }

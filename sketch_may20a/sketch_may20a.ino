@@ -34,7 +34,7 @@ void loop() {
     distance = (duration*0.0343)/2;
     Serial.print(distance);
     Serial.print("cm");
-    meter=distance/100;
+    meter = distance/100;
     Serial.print("\t");
     Serial.print(meter);
     Serial.println("m");
